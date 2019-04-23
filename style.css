@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 * {
   margin: 0;
   padding: 0;
@@ -133,13 +134,12 @@ nav {
 }
 
 .container-cards {
-  height: 80vh;
+  height: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -148,28 +148,56 @@ nav {
 }
 
 .card {
-  width: 350px;
+  border-radius: 2px;
+  width: 23%;
   margin: 20px 10px 0px;
-  border: 1px solid grey;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.card h2 {
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
-  width: 100%;
+.card .title-card {
   padding: 10px 0;
-  font-size: 30px;
-  text-align: center;
+  font-size: 23px;
+  margin: 0px 20px;
 }
 
-.card p {
-  margin: 10px 20px;
-  text-align: left;
-  font-size: 20px;
+.card .title-under-card {
+  margin: 0px 10px 5px 20px;
+  font-size: 15px;
+  color: #e74c3c;
+}
+
+.card .text-card {
+  margin: 0px 20px 10px;
+  font-size: 15px;
+}
+
+.card button {
+  margin: 5px 20px 15px;
+  background: #f1c40f;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 2px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+}
+
+@media screen and (max-width: 1122px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .card {
+    width: 90%;
+  }
 }
 
 .container-img {
-  height: 100px;
   position: relative;
   cursor: pointer;
 }
@@ -183,13 +211,21 @@ nav {
 }
 
 .container-img .image {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   width: 100%;
   margin-bottom: -3px;
   opacity: 1;
   -webkit-transition: 1s ease;
   transition: 1s ease;
+}
+
+.container-img .number-image {
+  background: #f1c40f;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  color: white;
+  border-top-right-radius: 2px;
 }
 
 .container-img .overlay {
@@ -207,7 +243,7 @@ nav {
 }
 
 .container-img .overlay h3 {
-  color: lightseagreen;
+  color: #000;
   position: absolute;
   top: 50%;
   left: 50%;
